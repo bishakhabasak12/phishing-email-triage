@@ -1,0 +1,19 @@
+Return-Path: <bounce@mailer-xk39.example>
+Received-SPF: fail (domain of mailer-xk39.example does not designate sender) client-ip=203.0.113.45
+Authentication-Results: mx.example.org; spf=fail smtp.mailfrom=mailer-xk39.example; dkim=none; dmarc=fail header.from=secure-hdfcbank-alerts.example
+From: "HDFC Bank Security" <alerts@secure-hdfcbank-alerts.example>
+Reply-To: support-desk@gmail-helpdesk.example
+To: employee@company.example
+Subject: URGENT: Account suspended - verify your account immediately
+Date: Tue, 27 Oct 2026 09:12:44 +0000
+MIME-Version: 1.0
+Content-Type: text/html; charset="utf-8"
+
+<html><body>
+<p>Dear Customer,</p>
+<p>We detected unusual activity on your account. Your account will be closed within 24 hours.
+Action required: confirm your identity now.</p>
+<p><a href="http://198.51.100.23/hdfc/login.php">https://www.hdfcbank.com/netbanking/verify</a></p>
+<p>Or use this link: <a href="http://bit.ly/3xFake99">Click here</a></p>
+<p>Regards,<br>HDFC Bank Security Team</p>
+</body></html>

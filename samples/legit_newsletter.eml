@@ -1,0 +1,16 @@
+Return-Path: <newsletter@company.example>
+Received-SPF: pass (domain of company.example designates sender) client-ip=203.0.113.10
+Authentication-Results: mx.example.org; spf=pass smtp.mailfrom=company.example; dkim=pass header.d=company.example; dmarc=pass header.from=company.example
+From: "Internal Communications" <newsletter@company.example>
+To: all-staff@company.example
+Subject: October Town Hall - agenda and joining details
+Date: Mon, 26 Oct 2026 08:00:00 +0000
+MIME-Version: 1.0
+Content-Type: text/html; charset="utf-8"
+
+<html><body>
+<p>Hi team,</p>
+<p>The October town hall is on Friday at 3 PM. Agenda and joining details are on the
+<a href="https://intranet.company.example/events/town-hall">intranet events page</a>.</p>
+<p>Thanks,<br>Internal Communications</p>
+</body></html>

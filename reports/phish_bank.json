@@ -1,0 +1,94 @@
+{
+  "file": "phish_bank.eml",
+  "analysed_at": "2026-10-28T08:16:41+00:00",
+  "subject": "URGENT: Account suspended - verify your account immediately",
+  "from": "HDFC Bank Security <alerts@secure-hdfcbank-alerts.example>",
+  "reply_to": "support-desk@gmail-helpdesk.example",
+  "return_path": "<bounce@mailer-xk39.example>",
+  "authentication": {
+    "spf": "fail",
+    "dkim": "none",
+    "dmarc": "fail"
+  },
+  "urls": [
+    {
+      "url": "http://198.51.100.23/hdfc/login.php",
+      "defanged": "hxxp://198[.]51[.]100[.]23/hdfc/login[.]php",
+      "host": "198.51.100.23",
+      "link_text": "https://www.hdfcbank.com/netbanking/verify",
+      "notes": [
+        "IP address instead of domain",
+        "no HTTPS",
+        "link text does not match destination",
+        "domain differs from sender"
+      ]
+    },
+    {
+      "url": "http://bit.ly/3xFake99",
+      "defanged": "hxxp://bit[.]ly/3xFake99",
+      "host": "bit.ly",
+      "link_text": "Click here",
+      "notes": [
+        "URL shortener",
+        "no HTTPS",
+        "domain differs from sender"
+      ]
+    },
+    {
+      "url": "https://www.hdfcbank.com/netbanking/verify",
+      "defanged": "hxxps://www[.]hdfcbank[.]com/netbanking/verify",
+      "host": "www.hdfcbank.com",
+      "link_text": "",
+      "notes": [
+        "domain differs from sender"
+      ]
+    }
+  ],
+  "attachments": [],
+  "findings": [
+    {
+      "points": 15,
+      "detail": "SPF = fail"
+    },
+    {
+      "points": 15,
+      "detail": "DMARC = fail"
+    },
+    {
+      "points": 20,
+      "detail": "Reply-To domain (gmail-helpdesk.example) differs from From domain (secure-hdfcbank-alerts.example)"
+    },
+    {
+      "points": 15,
+      "detail": "Return-Path domain (mailer-xk39.example) differs from From domain (secure-hdfcbank-alerts.example)"
+    },
+    {
+      "points": 20,
+      "detail": "Urgency / social-engineering language: account suspended, account will be closed, action required, click here, confirm your identity, immediately, unusual activity, urgent, verify your account, within 24 hours"
+    },
+    {
+      "points": 20,
+      "detail": "URL uses raw IP: hxxp://198[.]51[.]100[.]23/hdfc/login[.]php"
+    },
+    {
+      "points": 5,
+      "detail": "Unencrypted link: hxxp://198[.]51[.]100[.]23/hdfc/login[.]php"
+    },
+    {
+      "points": 25,
+      "detail": "Deceptive link: text shows www[.]hdfcbank[.]com but goes to 198[.]51[.]100[.]23"
+    },
+    {
+      "points": 10,
+      "detail": "URL shortener used: bit[.]ly"
+    },
+    {
+      "points": 5,
+      "detail": "Unencrypted link: hxxp://bit[.]ly/3xFake99"
+    }
+  ],
+  "score": 100,
+  "severity": "High",
+  "recommended_action": "ESCALATE to Cyber Defence / Incident Response. Block sender and URLs, search mailboxes for the same email, remove from inboxes, and advise the reporter not to interact with it.",
+  "virustotal": []
+}

@@ -1,0 +1,28 @@
+{
+  "file": "legit_newsletter.eml",
+  "analysed_at": "2026-10-28T08:16:41+00:00",
+  "subject": "October Town Hall - agenda and joining details",
+  "from": "Internal Communications <newsletter@company.example>",
+  "reply_to": "",
+  "return_path": "<newsletter@company.example>",
+  "authentication": {
+    "spf": "pass",
+    "dkim": "pass",
+    "dmarc": "pass"
+  },
+  "urls": [
+    {
+      "url": "https://intranet.company.example/events/town-hall",
+      "defanged": "hxxps://intranet[.]company[.]example/events/town-hall",
+      "host": "intranet.company.example",
+      "link_text": "intranet events page",
+      "notes": []
+    }
+  ],
+  "attachments": [],
+  "findings": [],
+  "score": 0,
+  "severity": "Low",
+  "recommended_action": "Likely benign or spam. Reply to the reporter with guidance, close the ticket and log it for pattern tracking.",
+  "virustotal": []
+}

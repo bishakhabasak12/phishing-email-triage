@@ -1,0 +1,27 @@
+Return-Path: <billing@invoices-dept.example>
+Received-SPF: softfail (domain of invoices-dept.example does not fully authorise sender) client-ip=203.0.113.88
+Authentication-Results: mx.example.org; spf=softfail smtp.mailfrom=invoices-dept.example; dkim=fail header.d=invoices-dept.example; dmarc=fail header.from=invoices-dept.example
+From: "Accounts Payable" <billing@invoices-dept.example>
+To: finance@company.example
+Subject: Final notice - Invoice #88213 payment failed
+Date: Tue, 27 Oct 2026 14:30:10 +0000
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="BOUNDARY123"
+
+--BOUNDARY123
+Content-Type: text/plain; charset="utf-8"
+
+Hello,
+
+Your payment failed. This is a final notice. Please open the attached invoice
+immediately and action required to avoid service interruption.
+
+Accounts Payable
+
+--BOUNDARY123
+Content-Type: application/octet-stream; name="Invoice_88213.pdf.exe"
+Content-Disposition: attachment; filename="Invoice_88213.pdf.exe"
+Content-Transfer-Encoding: 7bit
+
+THIS IS A HARMLESS TEST FILE FOR THE PHISHING TRIAGE DEMO. NOT A REAL EXECUTABLE.
+--BOUNDARY123--

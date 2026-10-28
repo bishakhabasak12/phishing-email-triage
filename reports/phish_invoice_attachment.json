@@ -1,0 +1,57 @@
+{
+  "file": "phish_invoice_attachment.eml",
+  "analysed_at": "2026-10-28T08:16:41+00:00",
+  "subject": "Final notice - Invoice #88213 payment failed",
+  "from": "Accounts Payable <billing@invoices-dept.example>",
+  "reply_to": "",
+  "return_path": "<billing@invoices-dept.example>",
+  "authentication": {
+    "spf": "softfail",
+    "dkim": "fail",
+    "dmarc": "fail"
+  },
+  "urls": [],
+  "attachments": [
+    {
+      "filename": "Invoice_88213.pdf.exe",
+      "content_type": "application/octet-stream",
+      "size_bytes": 81,
+      "sha256": "95efa8594152a9c37969315e36a4abfc4366f1a6237cd7847f8c6335ff3914a8",
+      "md5": "8f0b6a514defd08b3823da0c26d55d4c",
+      "flags": [
+        "risky extension .exe",
+        "double extension"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "points": 15,
+      "detail": "SPF = softfail"
+    },
+    {
+      "points": 15,
+      "detail": "DKIM = fail"
+    },
+    {
+      "points": 15,
+      "detail": "DMARC = fail"
+    },
+    {
+      "points": 20,
+      "detail": "Urgency / social-engineering language: action required, final notice, immediately, payment failed"
+    },
+    {
+      "points": 30,
+      "detail": "Risky attachment type: Invoice_88213.pdf.exe"
+    },
+    {
+      "points": 25,
+      "detail": "Double extension disguise: Invoice_88213.pdf.exe"
+    }
+  ],
+  "score": 100,
+  "severity": "High",
+  "recommended_action": "ESCALATE to Cyber Defence / Incident Response. Block sender and URLs, search mailboxes for the same email, remove from inboxes, and advise the reporter not to interact with it.",
+  "virustotal": []
+}
